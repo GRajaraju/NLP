@@ -45,3 +45,18 @@ classifier.fit(X_train,y_train)
 y_pred = classifier.predict(X_test)
 cm = confusion_matrix(y_test,y_pred)
 
+# to classify the new review, pass on the new text to the below function.
+
+def text_preprocess(new_review):
+  new_review = re.sub('[^a-zA-Z]',' ',new_review)
+  new_review = new_review.lower()
+  new_review = new_review.split()
+  new_review = [ps.stem(word) for word in new_review if not word in set(stopwords.words('english'))]
+  new_review = " ".join(new_review)
+  corpus.append(new_text_review)
+  new_review = cv.fit_transform(corpus).toarray()
+  t1 = new_review[1001] # specify the newly added sample (should be the last row in the corpus)
+  return classifier.predict([[t1]])
+
+  
+  
