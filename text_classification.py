@@ -45,7 +45,8 @@ classifier.fit(X_train,y_train)
 y_pred = classifier.predict(X_test)
 cm = confusion_matrix(y_test,y_pred)
 
-# to classify the new review, pass on the new text to the below function.
+# to classify new reviews, pass on the new text to the below function where we are basically preprocessing the text suitable
+# to the model. these steps are same we performed above.
 
 def text_preprocess(new_review):
   new_review = re.sub('[^a-zA-Z]',' ',new_review)
