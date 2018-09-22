@@ -29,12 +29,12 @@ def oneHotEncoder(word_tokens):
 
 wordvec = oneHotEncoder(word_tokens)
 
-new_word = 'understand human language'
-new_word_token = wordTokens(new_word)
+sample_sentence = 'understand human language'
+sentence_token = wordTokens(sample_sentence)
 
 # Converting the above sentence into a vector.
 sen_vec = np.zeros((len(word_tokens)))
-for word in new_word_token:
+for word in sentence_token:
     new_word_vec = wordvec[word]
     sen_vec = sen_vec + new_word_vec
 
