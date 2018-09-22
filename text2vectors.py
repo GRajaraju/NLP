@@ -1,3 +1,4 @@
+# A simple method to convert sentences into vectors.
 
 import numpy as np
 import re
