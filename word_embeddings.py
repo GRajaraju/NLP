@@ -44,6 +44,20 @@ def subsampling(int_words):
     return train_words
 
 
+def get_target(words, idx, window_size=5):
+    "Extracts list of words surrounding the target word."
+
+    rand_num = np.random.randint(1, window_size + 1)
+    start = idx - rand_num if (idx - rand_num) > 0 else 0
+    stop = idx + rand_num
+    target_words = words[start:idx] + words[idx+1:stop]
+
+    return list(target_words)
+
+
+def main():
+    pass
+
 
 if __name__ == '__main__':
 
@@ -51,7 +65,6 @@ if __name__ == '__main__':
 
     text = get_text(FILE_NAME)
 
-    print(text)
 
 
 
